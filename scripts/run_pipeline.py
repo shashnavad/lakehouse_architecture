@@ -13,7 +13,7 @@ sys.path.append(str(Path(__file__).parent))
 
 from bronze.ingest_raw_data import main as bronze_main
 from silver.process_silver import main as silver_main
-# from gold.process_gold import main as gold_main
+from gold.process_gold import main as gold_main
 
 
 def main():
@@ -31,9 +31,9 @@ def main():
         print("\n[2/3] Running Silver Layer Processing...")
         silver_main(incremental=True)
         
-        # Phase 3: Gold Layer (to be implemented)
-        # print("\n[3/3] Running Gold Layer Aggregation...")
-        # gold_main()
+        # Phase 3: Gold Layer
+        print("\n[3/3] Running Gold Layer Aggregation...")
+        gold_main()
         
         print("\n" + "=" * 60)
         print("✓ PIPELINE COMPLETE")

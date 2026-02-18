@@ -47,6 +47,9 @@ ingest-bronze:
 process-silver:
 	python scripts/silver/process_silver.py
 
+process-gold:
+	python scripts/gold/process_gold.py
+
 run-pipeline:
 	python scripts/run_pipeline.py
 

@@ -29,18 +29,21 @@
 - [x] Quarantine table for failed records
 - [x] Comprehensive pytest test suite
 
+### Phase 4: Gold Layer ✓
+- [x] Read from Silver Delta table
+- [x] Business-level aggregations (daily/weekly/monthly summaries)
+- [x] Dimension tables (dim_customers, dim_products, dim_dates)
+- [x] Write to Gold Delta table(s) with partitioning
+- [x] Table optimization using Delta Lake OPTIMIZE
+- [x] Customer segmentation (RFM analysis)
+- [x] Product performance metrics
+- [x] Comprehensive pytest test suite
+
 ## 🚧 In Progress
 
 None currently
 
 ## 📋 Next Steps
-
-### Phase 4: Gold Layer
-- [ ] Read from Silver Delta table
-- [ ] Business-level aggregations
-- [ ] Dimension tables
-- [ ] Write to Gold Delta table(s)
-- [ ] Table optimization (partitioning)
 
 ### Phase 5: Delta Lake Features
 - [ ] Time travel implementation
@@ -55,9 +58,9 @@ None currently
 - **Phase 1**: 100% Complete
 - **Phase 2**: 100% Complete
 - **Phase 3**: 100% Complete
-- **Phase 4**: 0% Complete
+- **Phase 4**: 100% Complete
 - **Phase 5**: 0% Complete
-- **Overall**: ~30% Complete
+- **Overall**: ~40% Complete
 
 ## 🎯 Quick Start
 
@@ -86,12 +89,17 @@ None currently
    make process-silver
    ```
 
-6. **Run complete pipeline**:
+6. **Process Gold layer**:
+   ```bash
+   make process-gold
+   ```
+
+7. **Run complete pipeline**:
    ```bash
    make run-pipeline
    ```
 
-7. **Run tests**:
+8. **Run tests**:
    ```bash
    make test
    ```

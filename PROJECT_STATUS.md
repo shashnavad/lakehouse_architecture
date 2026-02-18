@@ -11,28 +11,29 @@
 - [x] Makefile for common operations
 - [x] Requirements.txt with all dependencies
 
-### Phase 2: Bronze Layer (Partially Complete) ✓
+### Phase 2: Bronze Layer ✓
 - [x] Data generator script (e-commerce transactions)
 - [x] Bronze ingestion pipeline
 - [x] Schema enforcement
 - [x] Metadata columns (ingestion_timestamp, source_file, etc.)
 - [x] Delta Lake integration
+- [x] Test append mode
+- [x] Validate data writing
+
+### Phase 3: Silver Layer ✓
+- [x] Read from Bronze Delta table
+- [x] Data quality checks (null handling, duplicates, type validation)
+- [x] Data transformation (renaming, standardization, derived columns)
+- [x] Write to Silver Delta table with MERGE operation
+- [x] Incremental processing (process only new/changed records)
+- [x] Quarantine table for failed records
+- [x] Comprehensive pytest test suite
 
 ## 🚧 In Progress
 
-### Phase 2: Bronze Layer (Remaining)
-- [ ] Test append mode
-- [ ] Validate data writing
+None currently
 
 ## 📋 Next Steps
-
-### Phase 3: Silver Layer
-- [ ] Read from Bronze Delta table
-- [ ] Data quality checks (null handling, duplicates, type validation)
-- [ ] Data transformation (renaming, standardization, derived columns)
-- [ ] Write to Silver Delta table
-- [ ] Incremental processing
-- [ ] Quarantine table for failed records
 
 ### Phase 4: Gold Layer
 - [ ] Read from Silver Delta table
@@ -52,11 +53,11 @@
 ## 📊 Progress Summary
 
 - **Phase 1**: 100% Complete
-- **Phase 2**: 80% Complete
-- **Phase 3**: 0% Complete
+- **Phase 2**: 100% Complete
+- **Phase 3**: 100% Complete
 - **Phase 4**: 0% Complete
 - **Phase 5**: 0% Complete
-- **Overall**: ~20% Complete
+- **Overall**: ~30% Complete
 
 ## 🎯 Quick Start
 
@@ -78,6 +79,21 @@
 4. **Run Bronze ingestion**:
    ```bash
    make ingest-bronze
+   ```
+
+5. **Process Silver layer**:
+   ```bash
+   make process-silver
+   ```
+
+6. **Run complete pipeline**:
+   ```bash
+   make run-pipeline
+   ```
+
+7. **Run tests**:
+   ```bash
+   make test
    ```
 
 ## 📝 Notes

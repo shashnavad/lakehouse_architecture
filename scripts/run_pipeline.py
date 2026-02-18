@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent))
 
 from bronze.ingest_raw_data import main as bronze_main
-# from silver.process_silver import main as silver_main
+from silver.process_silver import main as silver_main
 # from gold.process_gold import main as gold_main
 
 
@@ -27,9 +27,9 @@ def main():
         print("\n[1/3] Running Bronze Layer Ingestion...")
         bronze_main()
         
-        # Phase 2: Silver Layer (to be implemented)
-        # print("\n[2/3] Running Silver Layer Processing...")
-        # silver_main()
+        # Phase 2: Silver Layer
+        print("\n[2/3] Running Silver Layer Processing...")
+        silver_main(incremental=True)
         
         # Phase 3: Gold Layer (to be implemented)
         # print("\n[3/3] Running Gold Layer Aggregation...")

@@ -44,8 +44,17 @@ generate-data:
 ingest-bronze:
 	python scripts/bronze/ingest_raw_data.py
 
+process-silver:
+	python scripts/silver/process_silver.py
+
 run-pipeline:
 	python scripts/run_pipeline.py
+
+test:
+	pytest tests/ -v
+
+test-coverage:
+	pytest tests/ --cov=scripts --cov-report=html
 
 logs:
 	docker-compose logs -f

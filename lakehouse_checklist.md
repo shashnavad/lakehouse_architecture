@@ -39,13 +39,13 @@
 ☑ Run OPTIMIZE command to compact small files
 ☑ Run VACUUM to clean up old versions (retention policy)
 
-## Phase 6: Streaming (Optional but Recommended)
-☐ Set up Kafka container OR simulate streaming with file source
-☐ Create streaming producer to generate real-time data
-☐ Build Spark Structured Streaming consumer
-☐ Write streaming data to Delta Lake Bronze table
-☐ Implement watermarking for late-arriving data
-☐ Test exactly-once semantics and fault tolerance
+## Phase 6: Streaming (Optional but Recommended) ✓
+☑ Set up Kafka container OR simulate streaming with file source
+☑ Create streaming producer to generate real-time data
+☑ Build Spark Structured Streaming consumer
+☑ Write streaming data to Delta Lake Bronze table
+☑ Implement watermarking for late-arriving data
+☑ Test exactly-once semantics and fault tolerance
 
 ## Phase 7: Data Quality & Validation
 ☐ Create data quality framework (Great Expectations OR custom checks)

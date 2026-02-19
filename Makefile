@@ -16,6 +16,10 @@ help:
 	@echo "  make delta-features - Run Delta Lake features (time travel, OPTIMIZE)"
 	@echo "  make run-pipeline   - Run complete pipeline (Bronze → Silver → Gold)"
 	@echo ""
+	@echo "Streaming:"
+	@echo "  make kafka-producer - Start Kafka producer (generate streaming data)"
+	@echo "  make streaming-consumer - Start Spark streaming consumer"
+	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean          - Clean up generated files and Docker volumes"
 	@echo "  make logs           - View Docker logs"
@@ -61,6 +65,15 @@ delta-optimize:
 
 run-pipeline:
 	python scripts/run_pipeline.py
+
+kafka-producer:
+	python scripts/streaming/kafka_producer.py --num-transactions 100 --interval 1.0
+
+kafka-producer-continuous:
+	python scripts/streaming/kafka_producer.py --continuous --duration 300
+
+streaming-consumer:
+	python scripts/streaming/streaming_consumer.py
 
 test:
 	pytest tests/ -v

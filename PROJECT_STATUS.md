@@ -48,15 +48,25 @@
 - [x] VACUUM command (retention policy)
 - [x] Comprehensive pytest test suite
 
+### Phase 6: Streaming ✓
+- [x] Kafka container setup (docker-compose)
+- [x] Kafka producer for real-time transaction generation
+- [x] Spark Structured Streaming consumer
+- [x] Write streaming data to Delta Lake Bronze table
+- [x] Watermarking for late-arriving data
+- [x] Exactly-once semantics with checkpointing
+- [x] Comprehensive pytest test suite
+- [x] Streaming documentation
+
 ## 🚧 In Progress
 
 None currently
 
 ## 📋 Next Steps
 
-### Phase 6: Streaming
-- [ ] Kafka/Spark Structured Streaming
-- [ ] Real-time data ingestion
+### Phase 7: Data Quality & Validation
+- [ ] Enhanced data quality framework
+- [ ] Great Expectations integration
 
 ## 📊 Progress Summary
 
@@ -65,7 +75,8 @@ None currently
 - **Phase 3**: 100% Complete
 - **Phase 4**: 100% Complete
 - **Phase 5**: 100% Complete
-- **Overall**: ~50% Complete
+- **Phase 6**: 100% Complete
+- **Overall**: ~60% Complete
 
 ## 🎯 Quick Start
 
@@ -104,12 +115,21 @@ None currently
    make delta-features
    ```
 
-8. **Run complete pipeline**:
+8. **Run streaming pipeline** (Kafka + Spark Streaming):
+   ```bash
+   # Terminal 1: Start producer
+   make kafka-producer
+   
+   # Terminal 2: Start consumer
+   make streaming-consumer
+   ```
+
+9. **Run complete pipeline**:
    ```bash
    make run-pipeline
    ```
 
-9. **Run tests**:
+10. **Run tests**:
    ```bash
    make test
    ```

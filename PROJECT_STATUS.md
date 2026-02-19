@@ -39,19 +39,24 @@
 - [x] Product performance metrics
 - [x] Comprehensive pytest test suite
 
+### Phase 5: Delta Lake Features ✓
+- [x] Time travel (query by version, query by timestamp)
+- [x] ACID transaction testing and demonstration
+- [x] MERGE operation for upserts (Silver/Gold layers)
+- [x] Schema evolution (add new columns with mergeSchema)
+- [x] OPTIMIZE command (all layers, Z-Ordering support)
+- [x] VACUUM command (retention policy)
+- [x] Comprehensive pytest test suite
+
 ## 🚧 In Progress
 
 None currently
 
 ## 📋 Next Steps
 
-### Phase 5: Delta Lake Features
-- [ ] Time travel implementation
-- [ ] ACID transaction testing
-- [ ] MERGE operation for upserts
-- [ ] Schema evolution
-- [ ] OPTIMIZE command
-- [ ] VACUUM command
+### Phase 6: Streaming
+- [ ] Kafka/Spark Structured Streaming
+- [ ] Real-time data ingestion
 
 ## 📊 Progress Summary
 
@@ -59,8 +64,8 @@ None currently
 - **Phase 2**: 100% Complete
 - **Phase 3**: 100% Complete
 - **Phase 4**: 100% Complete
-- **Phase 5**: 0% Complete
-- **Overall**: ~40% Complete
+- **Phase 5**: 100% Complete
+- **Overall**: ~50% Complete
 
 ## 🎯 Quick Start
 
@@ -94,12 +99,17 @@ None currently
    make process-gold
    ```
 
-7. **Run complete pipeline**:
+7. **Run Delta Lake features** (time travel, OPTIMIZE):
+   ```bash
+   make delta-features
+   ```
+
+8. **Run complete pipeline**:
    ```bash
    make run-pipeline
    ```
 
-8. **Run tests**:
+9. **Run tests**:
    ```bash
    make test
    ```

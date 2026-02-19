@@ -11,6 +11,9 @@ help:
 	@echo "Data:"
 	@echo "  make generate-data  - Generate synthetic e-commerce data"
 	@echo "  make ingest-bronze  - Run Bronze layer ingestion"
+	@echo "  make process-silver - Process Silver layer"
+	@echo "  make process-gold   - Process Gold layer"
+	@echo "  make delta-features - Run Delta Lake features (time travel, OPTIMIZE)"
 	@echo "  make run-pipeline   - Run complete pipeline (Bronze → Silver → Gold)"
 	@echo ""
 	@echo "Maintenance:"
@@ -49,6 +52,12 @@ process-silver:
 
 process-gold:
 	python scripts/gold/process_gold.py
+
+delta-features:
+	python scripts/delta_features/delta_lake_features.py
+
+delta-optimize:
+	python scripts/delta_features/delta_lake_features.py --optimize
 
 run-pipeline:
 	python scripts/run_pipeline.py

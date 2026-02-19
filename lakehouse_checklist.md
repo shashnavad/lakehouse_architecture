@@ -31,13 +31,13 @@
 ☐ Write aggregated data to Delta Lake Gold table(s)
 ☐ Optimize table layout (partitioning by date/category)
 
-## Phase 5: Delta Lake Features
-☐ Implement time travel (query historical versions of data)
-☐ Test ACID transactions (concurrent writes, rollback scenarios)
-☐ Use MERGE operation for upserts (update existing, insert new)
-☐ Implement schema evolution (add new columns without breaking)
-☐ Run OPTIMIZE command to compact small files
-☐ Run VACUUM to clean up old versions (retention policy)
+## Phase 5: Delta Lake Features ✓
+☑ Implement time travel (query historical versions of data)
+☑ Test ACID transactions (concurrent writes, rollback scenarios)
+☑ Use MERGE operation for upserts (update existing, insert new)
+☑ Implement schema evolution (add new columns without breaking)
+☑ Run OPTIMIZE command to compact small files
+☑ Run VACUUM to clean up old versions (retention policy)
 
 ## Phase 6: Streaming (Optional but Recommended)
 ☐ Set up Kafka container OR simulate streaming with file source

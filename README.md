@@ -55,7 +55,16 @@ This project implements the **Medallion Architecture** (Bronze → Silver → Go
 
 4. **Run the pipeline**
    ```bash
+   # Complete pipeline (Bronze → Silver → Gold)
    python scripts/run_pipeline.py
+   
+   # Or use Makefile commands
+   make run-pipeline
+   ```
+
+5. **Explore Delta Lake features** (optional)
+   ```bash
+   make delta-features
    ```
 
 ## 📁 Project Structure
@@ -75,6 +84,7 @@ lakehouse_architecture/
 │   ├── bronze/                # Bronze layer pipelines
 │   ├── silver/                # Silver layer pipelines
 │   ├── gold/                  # Gold layer pipelines
+│   ├── delta_features/        # Delta Lake advanced features
 │   └── data_generator.py      # Synthetic data generator
 ├── config/                     # Configuration files
 │   └── spark_config.py        # Spark configuration
@@ -93,18 +103,22 @@ lakehouse_architecture/
 
 ## 📊 Features
 
-### ✅ Implemented (Phases 1-4)
+### ✅ Implemented (Phases 1-5)
 - ✅ Medallion Architecture (Bronze → Silver → Gold)
 - ✅ Bronze Layer: Raw data ingestion with metadata
 - ✅ Silver Layer: Data quality checks, transformations, MERGE operations
 - ✅ Gold Layer: Business aggregations, dimension tables, partitioning
 - ✅ Data Quality Framework (null checks, duplicates, referential integrity)
 - ✅ Incremental Processing
-- ✅ Table Optimization (Delta Lake OPTIMIZE)
+- ✅ **Delta Lake Advanced Features:**
+  - ✅ Time Travel (query by version/timestamp, RESTORE)
+  - ✅ ACID Transactions (atomicity, consistency, isolation, durability)
+  - ✅ Schema Evolution (add columns without breaking queries)
+  - ✅ OPTIMIZE (file compaction, Z-Ordering)
+  - ✅ VACUUM (cleanup with retention policy)
 - ✅ Comprehensive Test Suite (pytest)
 
-### 🚧 In Progress (Phases 5-10)
-- ⏳ Delta Lake Advanced Features (Time Travel, ACID, Schema Evolution)
+### 🚧 In Progress (Phases 6-10)
 - ⏳ Streaming Data Processing (Kafka, Spark Structured Streaming)
 - ⏳ Orchestration (Airflow DAGs)
 - ⏳ Monitoring Dashboard (Streamlit/Grafana)
@@ -115,6 +129,7 @@ See the [docs/](docs/) directory for detailed documentation:
 - [Architecture Details](docs/architecture.md)
 - [Setup Guide](docs/setup.md)
 - [Data Flow](docs/data_flow.md)
+- [Delta Lake Features](docs/delta_lake_features.md)
 
 ## 🤝 Contributing
 
